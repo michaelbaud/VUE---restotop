@@ -8,7 +8,7 @@ import RestaurantDetail from './page/RestaurantDetail'
 
 const routes = [
     { path: '/', component: Home },
-    { path: '/restaurant', component: RestaurantDetail },
+    { path: '/restaurant:title', name:'detail', component: RestaurantDetail },
 
 ]
 

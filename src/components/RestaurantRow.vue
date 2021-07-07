@@ -1,6 +1,6 @@
 <template>
     <div class="restaurant-row">
-        <h2 class="title">Nos restaurants</h2>
+        <h2 class="title">{{ titleRow }}</h2>
         <div class="wrapper-card">
             <Slider :restaurantsRowArray="restaurantsRowArray" />
         </div>
@@ -12,10 +12,17 @@
     export default {
         name: 'RestaurantRow',
         components: {
-            Slider
+            Slider,
         },
         props: {
-            restaurantsRowArray: Array
+            restaurantsRowArray: Array,
+            titleRow: String
         }
     }
 </script>
+
+<style lang="scss">
+    h2 {
+        margin-bottom: 0.5rem;
+    }
+</style>

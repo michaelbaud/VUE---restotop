@@ -3,9 +3,9 @@
 		<slide v-for="(card, index) in restaurantsRowArray" :key="index">
 			<restaurant-card :infoRestaurant="card" />
 		</slide>
-		<template #addons>
-			<navigation />
-		</template>
+		<template #addons >
+            <Navigation  />
+        </template>
 	</carousel>
 </template>
 

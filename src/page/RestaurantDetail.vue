@@ -1,10 +1,10 @@
 <template>
-    <h1>Restaurant</h1>
+    <h1>{{ this.$route.params.title }}</h1>
 </template>
 
 <script>
     export default {
-        name: 'RestaurantDetail',
+        name: 'RestaurantDetail'
     }
 </script>
 

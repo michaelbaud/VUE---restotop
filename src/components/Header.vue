@@ -6,16 +6,17 @@
         </div>
         <div class="wrapperInput">
             <input v-model="inputSearchRestaurant" type="text" placeholder="De quoi avez-vous envie ?">
-            <div class="searchResults">
-                <router-link to="/restaurant">
-                    <div v-for="(restaurant, index) in searchRestaurantsArray" :key="index" class="containerRestaurantSearch">
-                    <div class="wrapperImg">
-                        <img :src="restaurant.img" alt="Logo du restaurant">
-                    </div>
-                    <p>{{ restaurant.name }}</p>
-                </div>
-                </router-link>
-            </div>
+            <ul class="searchResults">
+                
+                <li v-for="(restaurant, index) in searchRestaurantsArray" :key="index" class="containerRestaurantSearch">
+                    <router-link :to="{ name: 'detail', params: { title: restaurant.name }}" >
+                        <div class="wrapperImg">
+                            <img :src="restaurant.img" alt="Logo du restaurant">
+                        </div>
+                        <p>{{ restaurant.name }}</p>
+                    </router-link>
+                </li>
+            </ul>
         </div>
     </div>
     <div class="banner"></div>
@@ -42,7 +43,7 @@
 
             return {
                 inputSearchRestaurant,
-                searchRestaurantsArray
+                searchRestaurantsArray,
             }
         }
     }
@@ -57,6 +58,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        
         .img {
             width: 200px;
         }
@@ -85,26 +87,26 @@
             }
             .searchResults {
                 position: absolute;
+                z-index: 1000;
                 top: 100%;
-                width: 100%;
+                width: 238px;
                 background-color: $white;
                 box-shadow: 0px 0px 10px rgb(0 0 0 / 10%);
                 border-width: 0 1px 1px 1px;
                 border-style: solid;
                 border-color: #e2e2e2;
+                list-style: none;
+                margin: 0;
+                padding: 0;
 
-                a {
-                    text-decoration: none;
-                    color: rgb(27, 26, 26);
+                .containerRestaurantSearch {
 
-                    .containerRestaurantSearch {
+                    a {
+                        text-decoration: none;
+                        color: rgb(27, 26, 26);
                         display: flex;
                         align-items: center;
                         padding: 10px;
-
-                        &:hover {
-                            background-color: $light-grey1;
-                        }
 
                         .wrapperImg {
                             height: 60px;
@@ -119,16 +121,28 @@
                             }
                         }
                     }
+
+                    &:hover {
+                        background-color: $light-grey1;
+                    }
+                    
                 }
+                
             }
         }
     }
     .banner {
         height: 200px;
         width: 100%;
-        background-image: url("https://www.ubereats.com/restaurant/_static/7b308f7cbbf8e335ceda0447a8bd7c63.png");
+        // background-image: url("https://www.ubereats.com/restaurant/_static/7b308f7cbbf8e335ceda0447a8bd7c63.png");
+        // background-image: url("https://www.sbs.com.au/food/sites/sbs.com.au.food/files/styles/full/public/capture_9.png?itok=z-utSjDl&mtime=1471218264");
+        // background-image: url("https://therantingpanda.files.wordpress.com/2016/10/ubereats-use-data.jpg?w=940&h=400&crop=1");
+        background-image: url("https://pic.clubic.com/v1/images/1708994/raw.webp?width=1200&fit=max&hash=d914fbf274f51732201f3edb6771c50561d3a2ee");
+
+
         background-size: cover;
         background-position: center center;
+        margin-bottom: 60px;
     }
 
     $breakpoint-tablet: 600px;
@@ -139,14 +153,7 @@
             .title {
                 margin-bottom: 20px;
             }
-
-            .wrapperInput {
-                .searchResults {
-                    width: 238px;
-                }
-            }
         }
-
         .banner {
             margin-top: 20px;
         }

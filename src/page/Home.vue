@@ -1,7 +1,7 @@
 <template>
     <div class="home">
         <Header :all_restaurants="all_restaurants" />
-        <RestaurantRow v-for="(restaurantsRowArray, index) in restaurantsRowsArray" :key="index" :restaurantsRowArray="restaurantsRowArray" />
+        <RestaurantRow v-for="(restaurantsRowArray, index) in restaurantsRowsArray" :titleRow="titleRow[index]" :key="index" :restaurantsRowArray="restaurantsRowArray" />
     </div>
 </template>
 
@@ -34,6 +34,7 @@
             }
 
             let restaurantsRowsArray = ref([])
+            let titleRow = (['Les plus populaires à proximité', 'Sur le pouce', 'Offres du jour'])
             let all_restaurants = ref([])
 
             const makeRowsRestaurants = () => {
@@ -58,7 +59,8 @@
 
             return {
                 restaurantsRowsArray,
-                all_restaurants
+                all_restaurants,
+                titleRow
             }
         }
     }
