@@ -5,7 +5,7 @@
             <span class="titleEnd">Otop</span>
         </div>
         <div class="wrapperInput">
-            <input v-bind:value="inputSearchRestaurant" v-on:input="search= $event.target.value" type="text" placeholder="De quoi avez-vous envie ?">
+            <input  v-bind:value="inputSearchRestaurant" v-on:input="inputSearchRestaurant= $event.target.value" type="text" placeholder="De quoi avez-vous envie ?">
             <ul class="searchResults">
                 
                 <li v-for="(restaurant, index) in searchRestaurantsArray" :key="index" class="containerRestaurantSearch">
