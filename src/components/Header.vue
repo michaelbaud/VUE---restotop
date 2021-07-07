@@ -5,7 +5,7 @@
             <span class="titleEnd">Otop</span>
         </div>
         <div class="wrapperInput">
-            <input v-model="inputSearchRestaurant" type="text" placeholder="De quoi avez-vous envie ?">
+            <input v-model="inputSearchRestaurant" autocomplete="off" type="text" placeholder="De quoi avez-vous envie ?">
             <ul class="searchResults">
                 
                 <li v-for="(restaurant, index) in searchRestaurantsArray" :key="index" class="containerRestaurantSearch">
