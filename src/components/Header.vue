@@ -137,7 +137,7 @@
         // background-image: url("https://www.ubereats.com/restaurant/_static/7b308f7cbbf8e335ceda0447a8bd7c63.png");
         // background-image: url("https://www.sbs.com.au/food/sites/sbs.com.au.food/files/styles/full/public/capture_9.png?itok=z-utSjDl&mtime=1471218264");
         // background-image: url("https://therantingpanda.files.wordpress.com/2016/10/ubereats-use-data.jpg?w=940&h=400&crop=1");
-        background-image: url("https://pic.clubic.com/v1/images/1708994/raw.webp?width=1200&fit=max&hash=d914fbf274f51732201f3edb6771c50561d3a2ee");
+        background-image: url("../assets/img/banner.webp");
 
 
         background-size: cover;
